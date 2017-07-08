@@ -1,0 +1,200 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1036{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+{\colortbl ;\red221\green221\blue221;}
+\viewkind4\uc1\pard\cf1\fs20 === Introduction ===\par
+Ce document a \'e9t\'e9 r\'e9dig\'e9 en version 1.2 du logiciel, de ce fait la version 1.2 est consid\'e9r\'e9e comme la version de r\'e9f\'e9rence et tout le changelog indique les modification \'e0 partir de cette version\par
+Ceci est la documentation de space'em up, jeu par Arthur Brandao\par
+La musique utilis\'e9 est A40 de ZeroCall\par
+Une partie des sprites utilis\'e9s viennent de Onyx\par
+\par
+=== Description ===\par
+\par
+--- Principe ---\par
+\par
+1 - Mode Solo/Coop\par
+TODO\par
+\par
+2 - mode Versus\line TODO\par
+\par
+--- Commandes ---\par
+\par
+1 - Mode Solo/Coop\par
+SPACE -> Tirer Joueur 1\par
+Z -> Mouvement Joueur 1 vers le haut\par
+Q -> Mouvement Joueur 1 vers la gauche\par
+S -> Mouvement Joueur 1 vers le bas \par
+D -> Mouvement Joueur 1 vers la droite\par
+R -> Recommencer\par
+T -> Couper/Activer la musique\par
+Numpad 0 -> Tirer/Rejoindre Joueur 2\par
+Fl\'e8che Haut -> Mouvement Joueur 2 vers le haut\par
+Fl\'e8che Gauche -> Mouvement Joueur 2 vers la gauche\par
+Fl\'e8che Bas -> Mouvement Joueur 2 vers le bas \par
+Fl\'e8che Droite -> Mouvement Joueur 2 vers la droite\par
+Echap -> Quitter le logiciel\par
+___Commande Debug___\par
+F9 -> +1 Vie\par
+F8 -> +50 Score\par
+F7 -> Apparition d'une ia type 3\par
+F6 -> Apparition d'une ia type 2\par
+F5 -> Apparition d'une ia type 1\par
+F12 -> Destruction de tous les ennemies\par
+\par
+2 - mode Versus\par
+TODO\par
+\par
+=== Changelog ===\par
+\par
+--- Ver : 1.3 [Graphic Update] ---\par
+\par
+1 - Correction de bug :\par
+Mauvais sprite utilis\'e9 par les vaisseaux verts pour le tir diagonale ba\par
+\par
+2 - Changement :\par
+Changement des sprites de tir des vaisseaux IA par une nouvelle version plus visible\par
+La musique ne red\'e9marre plus quand on relance le jeu avec la touche R\par
+Apparence du curseur de la souris sur le menu\par
+Nouvelle police pour l'affichage du score et de la vie\par
+Fond anim\'e9 sur le menu\par
+\par
+3 - Ajout :\par
+Compteur de vie afficher \'e0 cot\'e9 de score\par
+Changement du curseur et du bouton au survol de ce dernier\par
+Possiblit\'e9 de passer l'\'e9cran du logo avec la souris\par
+\par
+4 - Suppression :\par
+Curseur invisible sur l'\'e9cran de jeu\par
+ \par
+--- Ver 1.4 [Respawn Update] ---\par
+\par
+1 - Correction de bug :\par
+Aucun\par
+\par
+2 - Changement :\par
+Changement de la vitesse horizontal des \'e9toiles et des planetes :\par
+   -> petite \'e9toile passe de -1 \'e0 -0.5\par
+   -> grande \'e9toile passe de -2 \'e0 -1\par
+   -> planete passe de -3 \'e0 -2\par
+Changement de la vitesse des ia de type 3 de -4 \'e0 -3\par
+Refonte du systeme d'apparition des vaisseaux :\par
+   -> le 1er vaisseau d'un type apparait apr\'e8s son temps de respawn\par
+   -> lors de l'apparition d'un nouveau type de vaisseau le vaisseau du type precedent n'apparait pas\par
+   -> il faut tuer 40 vaisseau (anciennement 30) de type 1 pour faire apparaitre le 1er type 2\par
+   -> il faut tuer 24 vaisseau (anciennement 18) de type 2 pour faire apparaitre le 1er type 3\par
+   -> il faut tuer 6 vaisseau (anciennement 5) de type 2 pour faire apparaitre un autre\par
+   -> il faut tuer 4 vaisseau (anciennement 6) de type 3 pour faire apparaitre un autre\par
+   -> cr\'e9ation d'un timeline propre au spawn des vaisseaux (1,5 fois la dur\'e9e de respawn)\par
+Changement du comportement des boutons sur le menu pour \'e9viter de lancer une partie en voulant passer l'\'e9cran des logos\par
+\par
+3 - Ajout :\par
+Gain d'une vie tout les 100 de score\par
+Touche 9 pour ajouter 50 de score\par
+Touche 8 pour faire apparaitre une ia type 3\par
+Touche 7 pour faire apparaitre une ia type 2\par
+Touche 6 pour faire apparaitre une ia type 1\par
+Touche F12 pour d\'e9truire toutes les ia\par
+Echap sur le menu quitte le jeu\par
+\par
+4 - Suppression :\par
+Aucun\par
+\par
+--- Ver 1.5 [Progression Update] ---\par
+\par
+1 - Correction de bug  :\par
+Invuln\'e9rabilit\'e9 infinie\par
+\par
+2 - Changement :\par
+Passage des touches debug sur les touches fonctions :\par
+   -> F5 fait apparaitre une ia de type 1 (anciennement touche 6)\par
+   -> F6 fait apparaitre une ia de type 2 (anciennement touche 7)\par
+   -> F7 fait apparaitre une ia de type 3 (anciennement touche 8)\par
+   -> F9 +1 vie (anciennement touche 0)\par
+   -> F8 +50 score (anciennement touche 9)\par
+Refonte du systeme de tir, chaque tir des joueurs est ind\'e9pendant\par
+\par
+3 - Ajout :\par
+Invuln\'e9rabilit\'e9 apr\'e8s un tir :\par
+   -> Se d\'e9clenche apr\'e8s avoir subis un tir alli\'e9 ou ennemie\par
+   -> Rend invulnerable contre les tirs (alli\'e9 ou ennemie)\par
+   -> Si un vaisseau sors de l'\'e9cran une vie est perdu\par
+   -> Une collision fait perdre une vie\par
+   -> L'invuln\'e9rabilit\'e9 s'applique au deux joueurs en coop\par
+   -> La dur\'e9e de l'invuln\'e9rabilit\'e9 est de 80 steps\par
+Clignotement pour indiquer l'invuln\'e9rabilit\'e9\par
+Les vaisseaux peuvent lacher une vie en mourrant si les points ia sont un multiple de 50\par
+Les vie bouge et font une boucle\par
+Power-Up :\par
+   -> Une chance sur 30 qu'un ennemie lache son power-up en mourrant\par
+   -> Chaque type d'ia a un power-up diff\'e9rent : SpeedUp pour les rouges; FireUp pour les jaunes, et tir en diagonale pour les verts\par
+   -> Les effets du power-up ne s'applique qu'au joueur qui les r\'e9cup\'e9rent\par
+   -> Le SpeedUp augmente la vitesse de 1, j'usqu'a un maximum de 16 (la vitesse de base est de 11)\par
+   -> Le FireUp diminue le cd du tir de step j'usqu'a un minimum de 4 steps (le cd de base est de 10 steps)\par
+   -> La vie est prioritaire sur les power-up\par
+\par
+4 - Suppression\par
+Aucun\par
+\par
+--- Ver 1.6 [Optimisation Update] ---\par
+\par
+1 - Correction de bug :\par
+Aucun\par
+\par
+2 - Changement :\par
+Refonte du fonctionnement du systeme de tir des joueurs (aucune difference visible en jeu)\par
+Refonte du fonctionnement du systeme de tir des ia (aucune difference visible en jeu)\par
+Refonte du fonctionnement du systeme de mouvement des joueurs (aucune difference visible en jeu)\par
+Refonte du fonctionnement des touches debug, et communes aux deux joueurs (aucune difference visible en jeu)\par
+\par
+3 - Ajout :\par
+Aucun\par
+\par
+4 - Suppression :\par
+Aucun\par
+\par
+--- Ver 1.7 [Small Update] ---\par
+\par
+1 - Correction de bug :\par
+Bug deplacment fantome(sans que le joueur n'appuie sur une touche) des vaisseaux\par
+Impossibilit\'e9 de tirer quand on rammase un power up jaune\par
+\par
+2 - Changement :\par
+Couleur du fond qui est maintenant bleu fonc\'e9 (anciennement noir) dans le jeu et le menu\par
+Trajectoire du coeur modif\'e9, plus ample et parcourant plus le fenetre\par
+\par
+3 - Ajout :\par
+Les power up avance vers le joueur, il sont detruit si il sortent de l'\'e9cran\par
+\par
+4 - Suppresion\par
+Aucun\par
+\par
+--- Ver 1.8 [Recode Update] ---\par
+\par
+R\'e9ecriture du code pour une meilleur int\'e9gration web\par
+Pr\'e9paration du jeu pour l'insertion du mode versus\par
+R\'e9organisation des donn\'e9es pour un control plus centralis\'e9 et des changements plus facile\par
+Ajout de variable pour diff\'e9rent comportement (vitesse de tir, de respawn, ...) pour permettre des modifications plus faciles sur ces donn\'e9es\par
+Rerefonte des mouvements des joueurs\par
+Ajout d'un mode debug et suppresion de l'acien systeme\par
+Toute ces modifications n'on aucun r\'e9el impact en jeu\par
+Pause\par
+\par
+Tout les tir touchant un joueur sons d\'e9truit meme si ce dernier est invulnerable\par
+Ajout d'un mode tactile activable avec le boutton sur le menu\par
+Rendu plus realiste de la vitesse en digonale des joueurs\par
+Ajout possibilit\'e9 d'interaction avec le serveur\par
+\par
+Bug -> partie redmare pas apres echap quand mort + pas de tir\par
+\par
+--- Ver 2.0 [Versus Update] ---\par
+\par
+--- Ver 2.1 [Balancing Update] ---\par
+\par
+\par
+=== A Faire ===\par
+Modifier la vitesse de tir des ia\par
+Mettre en place les \'e9crans avec les touches\par
+Modifier le score donner par les diff\'e9rentes ia\par
+Modifier les images de l'installeur windows\par
+\par
+Pour la version Windows inclur .ini pour definir variable global\fs24\par
+}
+ 

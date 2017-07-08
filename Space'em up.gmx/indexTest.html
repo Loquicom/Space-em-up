@@ -1,0 +1,37 @@
+<html>
+
+	<body>
+		<button onclick="test()">Yolo</button>
+
+		<script type="text/javascript">
+			function getXMLHttpRequest() {
+				var xhr = null;
+	
+				if (window.XMLHttpRequest || window.ActiveXObject) {
+					if (window.ActiveXObject) {
+						try {
+							xhr = new ActiveXObject("Msxml2.XMLHTTP");
+						} catch(e) {
+							xhr = new ActiveXObject("Microsoft.XMLHTTP");
+						}
+					} else {
+						xhr = new XMLHttpRequest(); 
+					}
+				} else {
+					alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+					return null;
+				}
+	
+				return xhr;
+			}
+
+			function test(){
+				var test = 142;
+				var xhr = getXMLHttpRequest(); // Voyez la fonction getXMLHttpRequest() définie dans la partie précédente
+				xhr.open("GET", "score.php?score="+test, true);
+				xhr.send(null);
+			}
+		</script>
+	</body>
+
+</html>
