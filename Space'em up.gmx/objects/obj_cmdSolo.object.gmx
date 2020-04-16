@@ -212,7 +212,7 @@ for(var i=0;i&lt;nbStars;i++){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///+1 vie tout les 100 de score
+            <string>///+1 vie tout les vieBonus*100 de score
 
 var indicScore = floor(scorePlayer/100);
 
@@ -245,11 +245,6 @@ if(indicScore == vieBonus){
           <argument>
             <kind>1</kind>
             <string>///Gestions des evenements
-
-//Aparition des planetes
-if(random_range(1, spawnPlanet) == 1){
-    instance_create(tailleX, random_range(0, tailleY), obj_planet);
-}
 
 //Affichage game over
 if(vie &lt;= 0 &amp;&amp; endGame == 0 ){
@@ -338,8 +333,13 @@ if(ia[3] == spawnIa3){
     typeIA = 3;
     instance_create(0, 0, obj_spawnSolo);
     typeIA = 0;
-    //instance_create(1024, random_range(50,718), obj_ia3);
     ia[3] = 0;
+    //Augmente la vitesse de toutes les types d'ia
+    if (vitIA[1] &lt; 14) {
+        vitIA[1]--;
+        vitIA[2]--;
+        vitIA[3]--;
+    }
 }
 </string>
           </argument>
@@ -371,6 +371,18 @@ if(keyboard_check_pressed(vk_escape)){
     vie = 1;
     cdP1 = 0;
     cdP2 = 0;
+    vitP1 = 11;
+    vitP2 = 11;
+    fireP1 = 0;
+    fireP2 = 0;
+    tirDiagP1 = 0;
+    tirDiagP2 = 0;
+    ia[1] = 0;
+    ia[2] = 0;
+    ia[3] = 0;
+    vitIA[1] = -5;
+    vitIA[2] = -4;
+    vitIA[3] = -3;
     if(endGame == 0){end_game_solo();}
     room_goto(r2_menu);
 }
@@ -379,9 +391,22 @@ if(keyboard_check_pressed(vk_escape)){
 if(keyboard_check_pressed(ord('R')) &amp;&amp; !pause){
     scoreP1 = 0;
     scoreP2 = 0;
-    vie = 1;
+    vie = 3;
     cdP1 = 0;
     cdP2 = 0;
+    vitP1 = 11;
+    vitP2 = 11;
+    fireP1 = 0;
+    fireP2 = 0;
+    tirDiagP1 = 0;
+    tirDiagP2 = 0;
+    gameTime = current_time;
+    ia[1] = 0;
+    ia[2] = 0;
+    ia[3] = 0;
+    vitIA[1] = -5;
+    vitIA[2] = -4;
+    vitIA[3] = -3;
     room_goto(room);
 }
 
@@ -395,198 +420,6 @@ if(keyboard_check_pressed(vk_numpad0) &amp;&amp; instance_number(obj_player2) ==
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="84">
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>pause</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>false</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>213</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>sd_A40_ZeroCall</sound>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>212</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>sd_A40_ZeroCall</sound>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>421</id>
-        <kind>3</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>sd_A40_ZeroCall</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>

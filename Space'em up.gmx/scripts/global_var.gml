@@ -60,6 +60,14 @@ debug = true;
 globalvar consoleDebug;
 consoleDebug = false;
 
+//Volume de la musiqe
+globalvar music;
+music = 0.5;
+
+//Temps en jeu (en ms)
+globalvar gameTime;
+gameTime = 0;
+
 /* --- Variable jeu --- */
 
 //Score
@@ -84,9 +92,9 @@ powerUp = 21;
 globalvar vitPU;
 vitPU = 6;
 
-//Vie bonus tout les 100 de score
+//Vie bonus tout les vieBonus*100 de score
 globalvar vieBonus;
-vieBonus = 1;
+vieBonus = -1; // Negatif pour ne pas avoir de vie bonues
 
 //Nombre de point de vaisseaux (variable ia) pour faire apparaitre une vie
 globalvar spawnVie;
@@ -114,8 +122,9 @@ ratioEtoile[1] = 2;
 
 //Chance d'avoir une planete
 globalvar spawnPlanet;
-spawnPlanet = 120;
-
+spawnPlanet = 800;
+globalvar valToSpawnPlanet;
+valToSpawnPlanet = 8;
 
 //Vitesse du décor
 //[0] - bigStar
@@ -138,7 +147,7 @@ angleTir = 0;
 
 //Vie des joueurs en Solo/Coop
 globalvar vie;
-vie = 1;
+vie = 3;
 
 //Vitesse des tirs des joueurs
 globalvar vitTir;
@@ -153,7 +162,7 @@ cdTir[3] = 4;
 
 //Temps de l'invulnerabilite
 globalvar invulnerable;
-invulnerable = 80;
+invulnerable = 50;
 
 /* --- Variable Joueur 1 --- */
 
@@ -265,7 +274,7 @@ cdTirIA[3] = 35;
 //Score donné par les IA
 globalvar scoreIA;
 scoreIA[1] = 1;
-scoreIA[2] = 1;
+scoreIA[2] = 2;
 scoreIA[3] = 3;
 
 //Variable pour indiquer quand faire spawn

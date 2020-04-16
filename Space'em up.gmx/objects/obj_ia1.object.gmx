@@ -264,14 +264,7 @@ instance_create(x, y, obj_explosion);
 //Lancement du temps de respawn
 alarm[0] = respawnIA[1];
 
-//Test si il faut faire apparaitre une vie ou un power_up
-//Si oui la fait apparaitre la où le vaisseau est mort
-if(spawn_vie()){
-    instance_create(x, y, obj_vie);
-}
-else if(spawn_powerUp(1)){
-    instance_create(x, y, obj_speedUp);
-}
+//Pas de vie ou de power-uo qui spawn quand collision
 </string>
           </argument>
         </arguments>
@@ -312,14 +305,7 @@ instance_create(x, y, obj_explosion);
 //Lancement du temps de respawn
 alarm[0] = respawnIA[1];
 
-//Test si il faut faire apparaitre une vie ou un power_up
-//Si oui la fait apparaitre la où le vaisseau est mort
-if(spawn_vie()){
-    instance_create(x, y, obj_vie);
-}
-else if(spawn_powerUp(1)){
-    instance_create(x, y, obj_speedUp);
-}
+//Pas de vie ou de power-uo qui spawn quand collision
 </string>
           </argument>
         </arguments>

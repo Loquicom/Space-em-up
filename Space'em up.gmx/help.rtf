@@ -2,7 +2,7 @@
 {\colortbl ;\red221\green221\blue221;}
 \viewkind4\uc1\pard\cf1\fs20 === Introduction ===\par
 Ce document a \'e9t\'e9 r\'e9dig\'e9 en version 1.2 du logiciel, de ce fait la version 1.2 est consid\'e9r\'e9e comme la version de r\'e9f\'e9rence et tout le changelog indique les modification \'e0 partir de cette version\par
-Ceci est la documentation de space'em up, jeu par Arthur Brandao\par
+Ceci est la documentation de space'em up, jeu par Loquicom\par
 La musique utilis\'e9 est A40 de ZeroCall\par
 Une partie des sprites utilis\'e9s viennent de Onyx\par
 \par
@@ -11,36 +11,43 @@ Une partie des sprites utilis\'e9s viennent de Onyx\par
 --- Principe ---\par
 \par
 1 - Mode Solo/Coop\par
-TODO\par
+D\'e9truire le plus d'ennemie avant de mourrir pour faire le meilleur score\par
+Les boules rouge augmente la vitesse de d\'e9placement\par
+Les boules jaunes augmente la vitesse de tir\par
+Les boules vertes permettent de tirer en diagonale\par
+Sortir par le haut de l'ecran fait revenir par le bas (et inversement)\par
+En mode coop le tir amis est activ\'e9\par
 \par
-2 - mode Versus\line TODO\par
+2 - Mode Souris/Tactile\par
+Le bouton en haut a droite permet de changer de mode, dans ce mode seul le solo est accessible (pas de coop)\par
+Le tir est automatique\par
+Le deplacement ce fait en maintenant le clic gauche pour que le vaisseau suive le mouvement de la souris\par
+Sinon ce mode de jeu est identique au mode solo/coop\par
+Le high score de ce mode est different du solo/coop\par
+\par
+3 - mode Versus\line WIP\par
+Le bouton ne fait rien pour le moment\par
 \par
 --- Commandes ---\par
 \par
-1 - Mode Solo/Coop\par
+___Mode Solo/Coop___\par
 SPACE -> Tirer Joueur 1\par
 Z -> Mouvement Joueur 1 vers le haut\par
 Q -> Mouvement Joueur 1 vers la gauche\par
 S -> Mouvement Joueur 1 vers le bas \par
 D -> Mouvement Joueur 1 vers la droite\par
 R -> Recommencer\par
-T -> Couper/Activer la musique\par
+T -> Baisser le volume\par
+Y -> Augmenter le volume\par
+P -> Pause\par
 Numpad 0 -> Tirer/Rejoindre Joueur 2\par
 Fl\'e8che Haut -> Mouvement Joueur 2 vers le haut\par
 Fl\'e8che Gauche -> Mouvement Joueur 2 vers la gauche\par
 Fl\'e8che Bas -> Mouvement Joueur 2 vers le bas \par
 Fl\'e8che Droite -> Mouvement Joueur 2 vers la droite\par
-Echap -> Quitter le logiciel\par
+Echap -> Retour au menu / Quitter le logiciel\par
 ___Commande Debug___\par
-F9 -> +1 Vie\par
-F8 -> +50 Score\par
-F7 -> Apparition d'une ia type 3\par
-F6 -> Apparition d'une ia type 2\par
-F5 -> Apparition d'une ia type 1\par
-F12 -> Destruction de tous les ennemies\par
-\par
-2 - mode Versus\par
-TODO\par
+0 -> Ouvrir la console de debug (taper help pour avoir les commandes) \par
 \par
 === Changelog ===\par
 \par
@@ -173,7 +180,7 @@ Pr\'e9paration du jeu pour l'insertion du mode versus\par
 R\'e9organisation des donn\'e9es pour un control plus centralis\'e9 et des changements plus facile\par
 Ajout de variable pour diff\'e9rent comportement (vitesse de tir, de respawn, ...) pour permettre des modifications plus faciles sur ces donn\'e9es\par
 Rerefonte des mouvements des joueurs\par
-Ajout d'un mode debug et suppresion de l'acien systeme\par
+Ajout d'un mode debug et suppresion de l'ancien systeme\par
 Toute ces modifications n'on aucun r\'e9el impact en jeu\par
 Pause\par
 \par
@@ -182,12 +189,28 @@ Ajout d'un mode tactile activable avec le boutton sur le menu\par
 Rendu plus realiste de la vitesse en digonale des joueurs\par
 Ajout possibilit\'e9 d'interaction avec le serveur\par
 \par
-Bug -> partie redmare pas apres echap quand mort + pas de tir\par
+Bug -> partie redemare pas apres echap quand mort + pas de tir\par
 \par
---- Ver 2.0 [Versus Update] ---\par
-\par
---- Ver 2.1 [Balancing Update] ---\par
-\par
+--- Ver 1.9 [Balancing Update] ---\par
+ \par
+Apr\'e8s que 800 IA ont spawn les vies n'apparaissent plus\par
+Plus de spawn de power-up ou de vie lors de collision avec un ennemie\par
+Suppression du gain de vie avec le score\par
+Diminution de la frequence d'apparition des vies\par
+Les ennenemies de type 2 (jaune) donnent maintenant 2 points (1 point precedement)\par
+Changement splash screen\par
+Les power-up sont bien reset\par
+Baisse du volume de la musique par defaut\par
+Gestion du volume de la musique\par
+Prendre un degat fait perdre le tir en diagonale\par
+Diminution du temps d'invulnerabilit\'e9 (80 -> 50)\par
+La vitesse des ia augmente au fur et a mesure de la partie (lors de chaque apparition d'une nouvelle ia de type 3, apres la 1er apparition)\par
+Les ia peuvent augmenter de 9 fois leur vitesse\par
+La vitesse maximum des joueurs est de 18 (anciennement 16)\par
+L'amplitude de la trajectoire des vie a \'e9t\'e9 un peu diminu\'e9e\par
+Le joueur commence avec 3 vies (1 anciennement)\par
+Debug commande get vitp1\par
+Debug spawn planete\par
 \par
 === A Faire ===\par
 Modifier la vitesse de tir des ia\par

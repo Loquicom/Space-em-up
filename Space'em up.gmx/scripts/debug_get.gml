@@ -65,7 +65,7 @@ else if(varName == "invulnerablep1"){
     return invulnerableP1;
 }
 else if(varName == "vitp1"){
-    return virP1;
+    return vitP1;
 }
 else if(varName == "firep1"){
     return fireP1;
@@ -99,6 +99,9 @@ else if(varName == "spawnia2"){
 }
 else if(varName == "spawnia3"){
     return spawnIa3;
+}
+else if(varName == "time") {
+    return current_time - gameTime;
 }
 else if(varName == "help" || varName == "h"){
     return "get <variable> [position_tableau]"

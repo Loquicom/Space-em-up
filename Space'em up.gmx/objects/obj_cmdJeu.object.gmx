@@ -27,11 +27,78 @@
             <kind>1</kind>
             <string>///Initialisation du mode de jeu
 
+//Recup le temps au lancement
+gameTime = current_time
+
+//Baisse la musique
+audio_sound_gain(sd_A40_ZeroCall, music, 0);
+
 if(modeJeu == 1){
     instance_create(0, 0, obj_cmdSolo);
     instance_create(0, 0, obj_drawInfoSolo);
     instance_create(144, 336, obj_player1);
     instance_create(tailleX, random_range(50,tailleY-50), obj_ia1);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gestion des touches
+
+// Changement volume musique
+if(!consoleDebug) {
+    if(music &gt; 0 &amp;&amp; keyboard_check(ord('T'))) {
+        music -= 0.1;
+    }
+    if(music &lt; 1 &amp;&amp; keyboard_check(ord('Y'))) {
+        music += 0.1;
+    }
+    audio_sound_gain(sd_A40_ZeroCall, music, 100);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gestion background
+
+//Aparition des planetes
+if(floor(random_range(1, spawnPlanet)) == valToSpawnPlanet){
+    instance_create(tailleX, random_range(0, tailleY), obj_planet);
+    valToSpawnPlanet = floor(random_range(1, spawnPlanet));
 }
 </string>
           </argument>

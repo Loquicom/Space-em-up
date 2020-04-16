@@ -19,4 +19,4 @@ for (i = 1; i < (string_length(msg)+1); i++) {
     }
 }
 
-return splits[]
+return splits

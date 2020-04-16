@@ -121,7 +121,7 @@ else{
           <argument>
             <kind>1</kind>
             <string>///Augmente la vitesse
-if(vitP2 &lt; 16){
+if(vitP2 &lt; 18){
     vitP2++;
 }
 
@@ -149,7 +149,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Augmente la vitesse
-if(vitP1 &lt; 16){
+if(vitP1 &lt; 18){
     vitP1++;
 }
 
