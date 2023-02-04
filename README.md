@@ -6,6 +6,7 @@ La musique utilisé est A40 de ZeroCall
 Une partie des sprites utilisés viennent de Onyx
 
 Le jeu en version navigateur est jouable :
+ - Sur mon site web [space-em-up.loquicom.fr](https://space-em-up.loquicom.fr) (Recommandé)
  - Sur la [Github Page](https://loquicom.github.io/Space-em-up/)
 
 ## Manuel
