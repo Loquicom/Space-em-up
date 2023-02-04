@@ -5,6 +5,9 @@ Ceci est la documentation de space'em up, jeu par Loquicom
 La musique utilisé est A40 de ZeroCall
 Une partie des sprites utilisés viennent de Onyx
 
+Le jeu en version navigateur est jouable :
+ - Sur la [Github Page](https://loquicom.github.io/Space-em-up/)
+
 ## Manuel
 
 Liste des différents modes et des commandes du jeu
